@@ -1,3 +1,5 @@
+// 基本类型的批注是number,string,boolean; 动态类型的结构是any;
+
 let show: boolean = true;
 show = false;
 
@@ -79,6 +81,17 @@ function getLength(something: string | number): number {
         return something.toString().length;
     }
 }
+
+// 定义函数无返回值 void
+function test(): void { 
+    console.log(1000);
+}
+
+const username: string = 'Gener';
+let senten: string = `Hello my name 
+is ${username}`
+console.log(senten);
+
 
 
 

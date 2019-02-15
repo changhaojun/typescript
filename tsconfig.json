@@ -2,6 +2,7 @@
   "compilerOptions": {
     "target": "es5",
     "noImplicitAny": false,
+    "noEmitOnError": true,
     "module": "amd",
     "removeComments": false,
     "sourceMap": false,

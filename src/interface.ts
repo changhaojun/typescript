@@ -1,15 +1,14 @@
 interface Shape {
-    name: string,
-    width: number,
-    height: number,
-    color?: string
+    name: string;
+    width: number;
+    height: number;
+    color?: string;
 }
 
 function area_(shape: Shape): string {
     let area = shape.width * shape.height;
     return `I'm ${shape.name} with area ${area} cm squared`;
 }
-
 console.log(area_({name: 'reatangle', width: 30, height: 15}));
 console.log(area_({name: 'square', width: 30, height: 30, color: 'blue'}));
 
@@ -23,5 +22,4 @@ const shaper = {
         },3000);
     }
 }
-
 shaper.popup();

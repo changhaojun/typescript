@@ -1,3 +1,4 @@
+// 基本类型的批注是number,string,boolean; 动态类型的结构是any;
 var show = true;
 show = false;
 var tom = {
@@ -66,3 +67,10 @@ function getLength(something) {
         return something.toString().length;
     }
 }
+// 定义函数无返回值 void
+function test() {
+    console.log(1000);
+}
+var username = 'Gener';
+var senten = "Hello my name \nis " + username;
+console.log(senten);

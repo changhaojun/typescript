@@ -1,17 +1,15 @@
-// class Shape {
-//     area: number;
-//     private color: string;
-//     constructor (public name: string, width: number, height: number) {
-//         this.area = width * height;
-//         this.color = 'pink';
-//     }
-//     shoutout() {
-//         return "I'm " + this.color + " " + this.name + " with an area of " + this.area + " cm squared.";
-//     }
-// }
-// const square = new Shape('square', 30, 30);
-// console.log(square.shoutout());
-// console.log( 'Area of Shape: ' + square.area );
-// console.log( 'Name of Shape: ' + square.name );
-// console.log( 'Width of Shape: ' + square.width );
-// console.log( 'Height of Shape: ' + square.height );
+var Test = /** @class */ (function () {
+    function Test(name, width, height) {
+        this.name = name;
+        this.area = width * height;
+        this.color = 'pink';
+    }
+    Test.prototype.shotout = function () {
+        return "I'm " + this.color + " " + this.name + " with an area of " + this.area + " cm squared.";
+    };
+    return Test;
+}());
+var square = new Test('square', 30, 30);
+console.log(square.shotout());
+console.log(square.area);
+console.log(square.name);
