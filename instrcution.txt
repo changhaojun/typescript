@@ -1,0 +1,14 @@
+
+1.全局安装typescript：npm install -g typescript;
+2.生成tsconfig.json文件：tsc --init;
+3.配置compilerOptions 如：{
+                            "compilerOptions": {
+                                "target": "es5",
+                                "noImplicitAny": false,
+                                "module": "amd",
+                                "removeComments": false,
+                                "sourceMap": false,
+                                "outDir": "dist/js"
+                            }
+                        }
+4.在Vscode中，当ts文件发生变化时自动编译成js文件：tsc -w;

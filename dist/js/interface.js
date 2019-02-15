@@ -1,17 +1,18 @@
 function area_(shape) {
-    const area = shape.width * shape.height;
+    var area = shape.width * shape.height;
     return "I'm " + shape.name + " with area " + area + " cm squared";
 }
 console.log(area_({ name: 'reatangle', width: 30, height: 15 }));
 console.log(area_({ name: 'square', width: 30, height: 30, color: 'blue' }));
-const shape = {
+var shaper = {
     name: 'reatangle',
     popup: function () {
-        console.log('This inside popup(): ' + this.name);
-        setTimeout(() => {
-            console.log('This inside setTimeout(): ' + this.name);
-            console.log("I'm a " + this.name + "!");
+        var _this = this;
+        console.log("This inside popup(): " + this.name);
+        setTimeout(function () {
+            console.log("This inside setTimeout():  " + _this.name);
+            console.log("I'm a  " + _this.name + " !");
         }, 3000);
     }
 };
-shape.popup();
+shaper.popup();

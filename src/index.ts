@@ -7,11 +7,13 @@ interface Person {
     age?: number;
     [propName: string]: any;
 }
-let tom: Person = {
+const tom: Person = {
     name: 'Tom',
     gender: 'male'
 };
-tom.name = 'Lem'
+tom.name = 'Lem';
+tom.gender = 100;
+console.log(tom);
 
 // 只读属性 readonly    只读的约束存在于第一次给对象赋值的时候，而不是第一次给只读属性赋值的时候
 interface Person_ {
@@ -46,14 +48,17 @@ function sum__(x: number, y?: number): number { // 可选参数     可选参数
         return x;
     }
 }
-function buildName(firstName: string, lastName: string = 'Cat') { // 参数默认值     
-    return firstName + ' ' + lastName;
+function buildName(firstName: string, lastName: string = 'Cat'): string { // 参数默认值     
+    return `${firstName} ${lastName}`;
 }
 let tomcat = buildName('Tom');
+console.log(tomcat);
+
 function buildName_(firstName: string = 'Tom', lastName: string) {
-    return firstName + ' ' + lastName;
+    return `${firstName} ${lastName}`;
 }
 let tomcat_ = buildName_(undefined,'Cat');
+console.log(tomcat_);
 
 function push(array: any[], ...items: any[]) { // 剩余参数      rest参数只能是最后一个参数
     items.forEach(function(item) {
@@ -62,7 +67,9 @@ function push(array: any[], ...items: any[]) { // 剩余参数      rest参数�
     return array;
 }
 let a:any = [];
-push(a, 1, 2, 3); // [1, 2, 3]
+const arr = push([], 1, 2, 3); // [1, 2, 3]
+console.log(arr);
+
 
 // 类型断言     <Type>值
 function getLength(something: string | number): number {

@@ -1,25 +1,27 @@
-let show = true;
+var show = true;
 show = false;
-let tom = {
+var tom = {
     name: 'Tom',
     gender: 'male'
 };
 tom.name = 'Lem';
-let tom_ = {
+tom.gender = 100;
+console.log(tom);
+var tom_ = {
     id: 1527,
     name: 'Tom',
     age: 23,
     gender: 'male'
 };
 // 数组类型
-let fibonacci = [1, 1, 2, 3, 5]; // 定义number类型的数组
-let fibonacci_ = [1, '1', 2, 3, 5]; //number类型和string类型的联合类型数组
-let list = ['Xcat Liu', 25, { id: 1365, addr: 'http://xcatliu.com' }]; //any类型的数组
+var fibonacci = [1, 1, 2, 3, 5]; // 定义number类型的数组
+var fibonacci_ = [1, '1', 2, 3, 5]; //number类型和string类型的联合类型数组
+var list = ['Xcat Liu', 25, { id: 1365, addr: 'http://xcatliu.com' }]; //any类型的数组
 // 函数类型
 function sum(x, y) {
     return x + y;
 }
-let sum_ = function (x, y) {
+var sum_ = function (x, y) {
     return x + y;
 };
 function sum__(x, y) {
@@ -30,22 +32,31 @@ function sum__(x, y) {
         return x;
     }
 }
-function buildName(firstName, lastName = 'Cat') {
-    return firstName + ' ' + lastName;
+function buildName(firstName, lastName) {
+    if (lastName === void 0) { lastName = 'Cat'; }
+    return firstName + " " + lastName;
 }
-let tomcat = buildName('Tom');
-function buildName_(firstName = 'Tom', lastName) {
-    return firstName + ' ' + lastName;
+var tomcat = buildName('Tom');
+console.log(tomcat);
+function buildName_(firstName, lastName) {
+    if (firstName === void 0) { firstName = 'Tom'; }
+    return firstName + " " + lastName;
 }
-let tomcat_ = buildName_(undefined, 'Cat');
-function push(array, ...items) {
+var tomcat_ = buildName_(undefined, 'Cat');
+console.log(tomcat_);
+function push(array) {
+    var items = [];
+    for (var _i = 1; _i < arguments.length; _i++) {
+        items[_i - 1] = arguments[_i];
+    }
     items.forEach(function (item) {
         array.push(item);
     });
     return array;
 }
-let a = [];
-push(a, 1, 2, 3); // [1, 2, 3]
+var a = [];
+var arr = push([], 1, 2, 3); // [1, 2, 3]
+console.log(arr);
 // 类型断言     <Type>值
 function getLength(something) {
     if (something.length) {
