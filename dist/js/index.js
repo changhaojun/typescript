@@ -1,19 +1,8 @@
+// 如果定义的时候没有赋值,不管之后有没有赋值，都会被推断为any类型而完全不被类型检查;
 // 基本类型的批注是number,string,boolean; 动态类型的结构是any;
+// typescript用Interface定义对象的类型;
 var show = true;
 show = false;
-var tom = {
-    name: 'Tom',
-    gender: 'male'
-};
-tom.name = 'Lem';
-tom.gender = 100;
-console.log(tom);
-var tom_ = {
-    id: 1527,
-    name: 'Tom',
-    age: 23,
-    gender: 'male'
-};
 // 数组类型
 var fibonacci = [1, 1, 2, 3, 5]; // 定义number类型的数组
 var fibonacci_ = [1, '1', 2, 3, 5]; //number类型和string类型的联合类型数组
@@ -37,7 +26,7 @@ function buildName(firstName, lastName) {
     if (lastName === void 0) { lastName = 'Cat'; }
     return firstName + " " + lastName;
 }
-var tomcat = buildName('Tom');
+var tomcat = buildName('Tom', 'xx');
 console.log(tomcat);
 function buildName_(firstName, lastName) {
     if (firstName === void 0) { firstName = 'Tom'; }
@@ -56,7 +45,7 @@ function push(array) {
     return array;
 }
 var a = [];
-var arr = push([], 1, 2, 3); // [1, 2, 3]
+var arr = push(a, 1, 2, 3); // [1, 2, 3]
 console.log(arr);
 // 类型断言     <Type>值
 function getLength(something) {
@@ -74,3 +63,5 @@ function test() {
 var username = 'Gener';
 var senten = "Hello my name \nis " + username;
 console.log(senten);
+var anyThing = 'hello';
+console.log(anyThing.myName);

@@ -1,3 +1,5 @@
+// Interface 用来定义对象的类型;
+// 赋值的时候变量的形状必须和接口的形状保持一致;
 function area_(shape) {
     var area = shape.width * shape.height;
     return "I'm " + shape.name + " with area " + area + " cm squared";
@@ -16,3 +18,17 @@ var shaper = {
     }
 };
 shaper.popup();
+var tom = {
+    name: 'Tom',
+    gender: 'male'
+};
+tom.name = 'Lem';
+tom.gender = 100;
+console.log(tom);
+var tom_ = {
+    id: 1527,
+    name: 'Tom',
+    age: 23,
+    gender: 'male'
+};
+console.log(tom_);
